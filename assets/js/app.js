@@ -35,7 +35,7 @@ $(document).ready(function(){
 
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         $.getJSON(api2,function(data){
-          current_observation
+          //console...... other stuff 
 
         });
         console.log(api2);
