@@ -35,7 +35,9 @@ $(document).ready(function(){
 
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         $.getJSON(api2,function(data){
-          //console...... other stuff 
+          //console...... other stuff
+          var marco = data.current_observation.temperature_string;
+          console.log(marco);
 
         });
         console.log(api2);
