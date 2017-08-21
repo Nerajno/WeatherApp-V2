@@ -10,6 +10,10 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
 }
+
+.navbar-inverse{
+  margin: auto;
+}
  .navbar-right a {
     float: left;
     display: block;
@@ -17,8 +21,40 @@ body{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.2em;
     color: white;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
+  color:#3B81BF;
+  font-size: larger;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #3B81BF;
+}
+
+.dropdown{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.dropdown-menu>li>a{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.Twtbtn{
+  padding: 3px;
+  margin: 5px;
+  border-radius: 7px;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-navbar{
+  background-color: #f0641f;
+  color: black;
 }
