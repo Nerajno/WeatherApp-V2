@@ -1,0 +1,60 @@
+body{
+  background-image: url("https://c1.staticflickr.com/3/2900/33230796166_912d01c6a3_b.jpg");
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    background-size: cover;
+    background-repeat:no-repeat;
+    -o-background-size: 100%;
+    padding-top: 25px;
+    margin-top: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+.navbar-inverse{
+  margin: auto;
+}
+ .navbar-right a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
+  color:#3B81BF;
+  font-size: larger;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #3B81BF;
+}
+
+.dropdown{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.dropdown-menu>li>a{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.Twtbtn{
+  padding: 3px;
+  margin: 5px;
+  border-radius: 7px;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-navbar{
+  background-color: #f0641f;
+  color: black;
+}
