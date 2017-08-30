@@ -21,7 +21,11 @@ $(document).ready(function(){
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
     console.log(crd.latitude + "1");*/
+   
+       
 
+
+    // Rounding down the deciamal place of the location 
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
 
@@ -29,19 +33,19 @@ $(document).ready(function(){
       var apiKey ="eefb3de557ed0c0a";
       var api = "http://api.wunderground.com/api/"+apiKey +"/geolookup/q/" +long+ "," + lat +".json";
       
-      console.log(api);
+      // console.log(api);
 
       // JSON Call to get location
       $.getJSON(api,function(data){
         location = data.location.city.replace(/ /g,"_");
         state = data.location.state
         $('#location').html(location+","+state);
-        console.log(location,state);
+        // console.log(location,state);
 
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         console.log(api2);
         $.getJSON(api2,function(data){
-          //console...... other stuff
+        //console...... other stuff
 
           var weatherInfo = data.current_observation.weather;
           $('#weatherInfo').html(weatherInfo);
@@ -54,33 +58,19 @@ $(document).ready(function(){
 
          // // CHAnge me 
          // https://sunrise-sunset.org/api
-          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
-          console.log(api3)
-          $.getJSON(api3,function(data){
-          
-          var sunriseTime= new Date(1000 * data.sys.sunrise);
-          sunriseTime= sunriseTime.getHours() + ":" + sunriseTime.getMinutes();
-          //==> PM version
-          var sunsetTime= new Date(1000 * data.sys.sunset);
-          var sunsetHr = sunsetTime.getHours();
-          if (sunsetHr <= 11){
-          console.log("fix me please");
-          }else(sunsetHr > 11)
-          sunsetHr = sunsetHr -12;
-          sunsetTime= sunsetHr + ":" + sunsetTime.getMinutes();
-          // var sunup =
-          // var sundown = 
-          });
-
+          var api3 = "https://api.sunrise-sunset.org/json?lat=" +lat+'&lon=' +long;
+          // "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
+          console.log(api3);
+  
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
           // console.log(windSpeed);
 
           var humidity = data.current_observation.relative_humidity;
-          console.log(humidity);
+          // console.log(humidity);
 
           var pressure = data.current_observation.pressure_mb;
-          console.log(pressure);
+          // console.log(pressure);
 
           // var marco = data.current_observation.temperature_string;
           // console.log(marco);
@@ -95,6 +85,7 @@ $(document).ready(function(){
           var months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
           $('#date').html(months[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
           $('#time').html((dt.getHours()>12?(dt.getHours()-12):dt.getHours()).toString() + ":" + ((dt.getMinutes() < 10 ? '0' : '').toString() + dt.getMinutes().toString()) + (dt.getHours() < 12 ? ' AM' : ' PM').toString());
+
         });
       });
     };
