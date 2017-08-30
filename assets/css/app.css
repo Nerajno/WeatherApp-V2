@@ -27,20 +27,32 @@ body{
   margin: 0 auto;
   text-transform: uppercase;
   color: orange;
-  padding: 15px 20px 0 20px;]
+  padding: 15px 20px 20px 20px;]
   display: block;
   text-align: center;
   width: 700px;
   height: auto;
   float: inherit;
   position: relative;
-  /*right: -50%;*/
 }
+
+.container-fluid, .row, .btn-lg{
+border-style: solid;
+border-color: white;
+border-width: 3px;
+}
+
 
 .card-body{
   font-family: 'Roboto', sans-serif;
   color:white;
 }
+
+.img,.sunup, .sundown{
+ height: 125px;
+ width:125px;
+}
+
 .weatherInfo{
   background-color: black;
   width: 70%;
@@ -53,3 +65,7 @@ body{
   border-radius:25%;
 }
 
+.weather_icon{
+  height: 125px;
+  width: 125px;
+}

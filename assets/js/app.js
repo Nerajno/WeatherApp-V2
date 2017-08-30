@@ -44,8 +44,43 @@ $(document).ready(function(){
           //console...... other stuff
 
           var weatherInfo = data.current_observation.weather;
-          $('#weatherInfo').html(weatherInfo)
-          console.log(weatherInfo);
+          $('#weatherInfo').html(weatherInfo);
+          // console.log(weatherInfo);
+
+          var weather_icon = data.current_observation.icon_url;
+          var security = "https://crossorigin.me/"+weather_icon;
+          $("#weather_icon").attr("src",weather_icon);
+          // console.log(weather_icon);
+
+
+          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
+          console.log(api3)
+          $.getJSON(api3,function(data){
+          
+          var sunriseTime= new Date(1000 * data.sys.sunrise);
+          sunriseTime= sunriseTime.getHours() + ":" + sunriseTime.getMinutes();
+          //==> PM version
+          var sunsetTime= new Date(1000 * data.sys.sunset);
+          var sunsetHr = sunsetTime.getHours();
+          if (sunsetHr <= 11){
+          console.log("fix me please");
+          }else(sunsetHr > 11)
+          sunsetHr = sunsetHr -12;
+          sunsetTime= sunsetHr + ":" + sunsetTime.getMinutes();
+          // var sunup =
+          // var sundown = 
+          });
+
+          var windSpeed = data.current_observation.wind_mph;
+          $("#windSpeed").html(windSpeed+" mph");
+          // console.log(windSpeed);
+
+          var humidity = data.current_observation.relative_humidity;
+          console.log(humidity);
+
+          var pressure = data.current_observation.pressure_mb;
+          console.log(pressure);
+
           // var marco = data.current_observation.temperature_string;
           // console.log(marco);
 
