@@ -1,0 +1,128 @@
+body{
+  /*background-image: url("");
+*/  background: url("https://farm5.staticflickr.com/4349/36015442164_c56145ab4a_b.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 25px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.info_header{
+  font-family: 'Roboto', sans-serif;
+  width: 74%;
+  margin: auto;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.center{
+  background-color: #313e45;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  border-radius: 7px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: orange;
+  padding: 15px 20px 0 20px;]
+  display: block;
+  text-align: center;
+  width: 700px;
+  height: auto;
+  float: inherit;
+  position: relative;
+  /*right: -50%;*/
+}
+
+/*.col-md-6{
+  background-color: white;
+  position: absolute;
+  color: blue;
+  border-style: solid;
+  border-color: blue;
+  width: 60%;
+  height: 250px;
+}*/
+
+.veg {
+background-color: white;
+  position: absolute;
+  color: blue;
+  border-style: solid;
+  border-color: blue;
+  width: 60%;
+  height: 250px;
+}
+
+.meat{
+  background-color: red;
+  position: absolute;
+  color: blue;
+  border-style: solid;
+  border-color: blue;
+  width: 60%;
+  height: 250px;
+}
+.weatherInfo{
+  background-color: black;
+  width: 70%;
+  margin: 0 auto;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
+  border-radius:25%;
+}
+
+
+ /*.custTile {
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+ * Provides Bootstrap 3 compatible classes for making responsive rows and columns consistently formatted for height.
+ * src: http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height
+ */
+/* columns of same height styles 
+ .row-same-height {
+    display: table;
+    width: 100%;
+}
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+}
+@media (min-width: 768px) {
+    .col-sm-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+/* vertical alignment styles */
+ .col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}*/
