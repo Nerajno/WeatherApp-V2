@@ -52,7 +52,8 @@ $(document).ready(function(){
           $("#weather_icon").attr("src",weather_icon);
           // console.log(weather_icon);
 
-         // CHAnge me 
+         // // CHAnge me 
+         // https://sunrise-sunset.org/api
           var api3 = "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
           console.log(api3)
           $.getJSON(api3,function(data){
