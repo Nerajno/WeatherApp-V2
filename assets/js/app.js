@@ -25,54 +25,67 @@ $(document).ready(function(){
 
 
 
-    // Rounding down the deciamal place of the location
+    // Rounding down the decimal place of the location
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
+    // Converts to string... the numbers recieved as coordinates 
 
+    //first API and function used to get location and city name.
     var weather = function(long,lat){
       var apiKey ="eefb3de557ed0c0a";
       var api = "http://api.wunderground.com/api/"+apiKey +"/geolookup/q/" +long+ "," + lat +".json";
-
-      // console.log(api);
+      // console.log(api); => testing if the api wrks 
 
       // JSON Call to get location
       $.getJSON(api,function(data){
         location = data.location.city.replace(/ /g,"_");
         state = data.location.state
         $('#location').html(location+","+state);
-        // console.log(location,state);
+        // console.log(location,state); => testing
 
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         console.log(api2);
         $.getJSON(api2,function(data){
-        //console...... other stuff
+        //console.log(api2); => testing
 
           var weatherInfo = data.current_observation.weather;
           $('#weatherInfo').html(weatherInfo);
-          // console.log(weatherInfo);
+          // console.log(weatherInfo); => testing
 
           var weather_icon = data.current_observation.icon_url;
           var security = "https://crossorigin.me/"+weather_icon;
           $("#weather_icon").attr("src",weather_icon);
-          // console.log(weather_icon);
+          // console.log(weather_icon); => testing
 
-         // // CHAnge me
-         // https://sunrise-sunset.org/api
-          var api3 = "https://api.sunrise-sunset.org/json?lat=" +lat+'&lon=' +long;
-          // "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
-          console.log(api3);
+
+          var sunup;
+          var sundown;
+
+          var other = function(sunup, sundown){
+          var api3 ="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon=" +long;
+          console.log(api3); //yes it wrks => testing
+          $getJSON(api3,function(data){})
+
+          //sundown = 
+          //sunup = 
+          }
+          other(sunup,sundown);          
+
+
+
+
 
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
-          // console.log(windSpeed);
+          // console.log(windSpeed); => testing..... Robin WIlliams made and awesome genie.
 
           var humidity = data.current_observation.relative_humidity;
           $("#humidity").html(humidity+ " %");
-          // console.log(humidity);
+          // console.log(humidity); => testing..... imagine what Samuel L. Jackson would do as genie.
 
           var pressure = data.current_observation.pressure_mb;
           $("#pressure").html(pressure+ " %");
-          // console.log(pressure);
+          // console.log(pressure); => testing
 
           // var marco = data.current_observation.temperature_string;
           // console.log(marco);
@@ -97,16 +110,8 @@ $(document).ready(function(){
   function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
   };
-
   navigator.geolocation.getCurrentPosition(success, error, options);
-
 });
-
-
-
-
-
-
 
 /*Testing Information
 googleapis
