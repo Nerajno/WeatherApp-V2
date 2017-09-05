@@ -1,9 +1,10 @@
+
 $(document).ready(function(){
-  var lat;
-  var long;
   var location;
   var state;
-  var city;
+  var lat;
+  var long;
+
 
   // Documentation from Mdn geolocation for html5 and its accuracy
   var options = {
@@ -22,9 +23,6 @@ $(document).ready(function(){
     console.log(`More or less ${crd.accuracy} meters.`);
     console.log(crd.latitude + "1");*/
 
-
-
-
     // Rounding down the decimal place of the location
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
@@ -39,10 +37,11 @@ $(document).ready(function(){
       // JSON Call to get location
       $.getJSON(api,function(data){
         location = data.location.city.replace(/ /g,"_");
-        state = data.location.state
+        state = data.location.state;
         $('#location').html(location+","+state);
         // console.log(location,state); => testing
 
+        // Second API is used to get the weather description based on the location collected from the previous API
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         console.log(api2);
         $.getJSON(api2,function(data){
@@ -57,24 +56,7 @@ $(document).ready(function(){
           $("#weather_icon").attr("src",weather_icon);
           // console.log(weather_icon); => testing
 
-
-          var sunup;
-          var sundown;
-
-          var other = function(sunup, sundown){
-          var api3 ="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon=" +long;
-          console.log(api3); //yes it wrks => testing
-          $getJSON(api3,function(data){})
-
-          //sundown = 
-          //sunup = 
-          }
-          other(sunup,sundown);          
-
-
-
-
-
+       
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
           // console.log(windSpeed); => testing..... Robin WIlliams made and awesome genie.
@@ -87,8 +69,28 @@ $(document).ready(function(){
           $("#pressure").html(pressure+ " %");
           // console.log(pressure); => testing
 
-          // var marco = data.current_observation.temperature_string;
-          // console.log(marco);
+          var cTemp = data.current_observation.temp_c;
+          $("#temp").html(cTemp +" &#x2103");
+          var tempSwap=true;
+        
+          var fTemp = data.current_observation.temp_f;
+           $("#temp").click(function() {
+             console.log(tempSwap);
+            if(tempSwap===true){
+          console.log(" mej");
+          $("#temp").html(cTemp + " &#x2103");
+          console.log('tempSwap was true, switching it to false');
+          tempSwap=false;
+        }
+        else {
+          $("#temp").html(fTemp + " &#x2109");
+          console.log('tempSwap was false, switching it to true');
+          tempSwap=true;
+        }
+      });
+
+          // Clicking the button to do temperature switch between Celcius and Fahrenheit 
+               
 
 
           //DATE AND TIME//
@@ -107,11 +109,29 @@ $(document).ready(function(){
     weather(lat,long);
     };
 
-  function error(err) {
+    function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
   };
   navigator.geolocation.getCurrentPosition(success, error, options);
 });
+
+var other = function(sunup, sundown){
+          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+long;
+          console.log(api3); //yes it wrks => testing
+          $.getJSON(api3,function(data){
+
+          var sundown;
+          var sunup;
+
+          sundown = data.sys.sunset;
+          console.log(sundown);
+          sunup = data.sys.sunrise;
+          console.log(sunup);
+
+            });
+
+          }
+          other(sunup,sundown);         
 
 /*Testing Information
 googleapis
