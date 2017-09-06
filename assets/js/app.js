@@ -83,11 +83,11 @@ $(document).ready(function(){
         
           var fTemp = data.current_observation.temp_f;
            $("#temp").click(function() {
-             console.log(tempSwap);
+             // console.log(tempSwap);
             if(tempSwap===true){
-          console.log(" mej");
+          //console.log(" mej");
           $("#temp").html(cTemp + " &#x2103");
-          console.log('tempSwap was true, switching it to false');
+          // console.log('tempSwap was true, switching it to false');
           tempSwap=false;
         }
         else {
@@ -101,17 +101,22 @@ $(document).ready(function(){
            var other = function(sunup, sundown){
           var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat2+"&lon="+long2;
           //"https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
-          console.log(api3); //yes it wrks => testing
+          // console.log(api3); yes it wrks => testing
           $.getJSON(api3,function(data){
 
           var sunup;
           var sundown;
 
           sunup = new Date(1000 *data.sys.sunrise);
-          console.log(sunup);
+          sunup = sunup.getHours()+ ":" +sunup.getMinutes()+" am";
+          // console.log(sunup);
+           $("#Sunup").html(sunup);
 
           sundown = new Date(1000 *data.sys.sunset);
-          console.log(sundown);
+          var hrs = sundown.getHours() - 12; 
+          sundown = hrs+ ":"+sundown.getMinutes()+" pm";
+          // console.log(sundown);
+          $("#Sunset").html(sundown);
 
           });
 
