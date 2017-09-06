@@ -32,20 +32,20 @@ $(document).ready(function(){
     var weather = function(long,lat){
       var apiKey ="eefb3de557ed0c0a";
       var api = "http://api.wunderground.com/api/"+apiKey +"/geolookup/q/" +long+ "," + lat +".json";
-      // console.log(api); => testing if the api wrks 
+      // console.log(api); //=> testing if the api wrks 
 
       // JSON Call to get location
       $.getJSON(api,function(data){
         location = data.location.city.replace(/ /g,"_");
         state = data.location.state;
         $('#location').html(location+","+state);
-        // console.log(location,state); => testing
+        //console.log(location,state); => testing
 
         // Second API is used to get the weather description based on the location collected from the previous API
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
         console.log(api2);
         $.getJSON(api2,function(data){
-        //console.log(api2); => testing
+        // console.log(api2); //=> testing
 
           var weatherInfo = data.current_observation.weather;
           $('#weatherInfo').html(weatherInfo);
@@ -71,6 +71,8 @@ $(document).ready(function(){
 
           var cTemp = data.current_observation.temp_c;
           $("#temp").html(cTemp +" &#x2103");
+        
+          // Clicking the button to do temperature switch between Celcius and Fahrenheit 
           var tempSwap=true;
         
           var fTemp = data.current_observation.temp_f;
@@ -89,9 +91,26 @@ $(document).ready(function(){
         }
       });
 
-          // Clicking the button to do temperature switch between Celcius and Fahrenheit 
-               
 
+           var other = function(sunup, sundown){
+          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&long=' +long;
+          console.log(api3); //yes it wrks => testing
+          $.getJSON(api3,function(data){
+
+          var sundown;
+          var sunup;
+
+          sundown = new Date(1000 *data.sys.sunset);
+          
+          console.log(sundown);
+          sunup = new Date(1000 *data.sys.sunrise);
+          console.log(sunup);
+
+            });
+
+          }
+          other(sunup,sundown); 
+          console.log(lat, long);    
 
           //DATE AND TIME//
           //Converted into days, months, hours, day-name, AM/PM
@@ -115,23 +134,6 @@ $(document).ready(function(){
   navigator.geolocation.getCurrentPosition(success, error, options);
 });
 
-var other = function(sunup, sundown){
-          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+long;
-          console.log(api3); //yes it wrks => testing
-          $.getJSON(api3,function(data){
-
-          var sundown;
-          var sunup;
-
-          sundown = data.sys.sunset;
-          console.log(sundown);
-          sunup = data.sys.sunrise;
-          console.log(sunup);
-
-            });
-
-          }
-          other(sunup,sundown);         
 
 /*Testing Information
 googleapis
