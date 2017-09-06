@@ -27,6 +27,12 @@ $(document).ready(function(){
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
     // Converts to string... the numbers recieved as coordinates 
+    
+
+    //To use for the Sunrise and SunSet section
+    var lat2 = crd.latitude;
+    var long2 = crd.longitude;
+    console.log(lat2, long2);
 
     //first API and function used to get location and city name.
     var weather = function(long,lat){
@@ -93,24 +99,25 @@ $(document).ready(function(){
 
 
            var other = function(sunup, sundown){
-          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&long=' +long;
+          var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat2+"&lon="+long2;
+          //"https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
           console.log(api3); //yes it wrks => testing
           $.getJSON(api3,function(data){
 
-          var sundown;
           var sunup;
+          var sundown;
 
-          sundown = new Date(1000 *data.sys.sunset);
-          
-          console.log(sundown);
           sunup = new Date(1000 *data.sys.sunrise);
           console.log(sunup);
 
-            });
+          sundown = new Date(1000 *data.sys.sunset);
+          console.log(sundown);
+
+          });
 
           }
           other(sunup,sundown); 
-          console.log(lat, long);    
+          //console.log(lat, long);    
 
           //DATE AND TIME//
           //Converted into days, months, hours, day-name, AM/PM
