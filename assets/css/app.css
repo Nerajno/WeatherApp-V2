@@ -1,14 +1,51 @@
 body{
- background: url("https://farm5.staticflickr.com/4349/36015442164_c56145ab4a_b.jpg") no-repeat center center fixed; 
+ background: url("https://farm5.staticflickr.com/4349/36015442164_c56145ab4a_b.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 25px;
-  margin-top: 100px;
   position: relative;
   font-family: 'Baloo Bhaijaan', cursive;
 }
+
+/*Navbar Start*/
+.navbar-inverse{
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
+  color:#3B81BF;
+  font-size: larger;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #3B81BF;
+}
+
+.dropdown{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.dropdown-menu>li>a{
+  color: #3B81BF;
+  text-transform:uppercase;
+}
+
+.Twtbtn{
+  padding: 1.5px;
+  margin: 2.5px;
+  border-radius: 7px;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-navbar{
+  background-color: #f0641f;
+  color: black;
+}
+/*Navbar End*/
 
 .info_header{
   /*font-family: 'Roboto', sans-serif;*/
@@ -36,7 +73,8 @@ body{
   position: relative;
 }
 
-.container-fluid, .row, .btn-lg{
+/*Fix this for the other section -for the top sections  */
+.row, .btn-lg{
 border-style: solid;
 border-color: white;
 border-width: 3px;
@@ -45,10 +83,10 @@ border-width: 3px;
 
 .card-body{
   font-family: 'Roboto', sans-serif;
-  color:white;
+  color:#26A69A;
 }
 
-.img,.sunup, .sundown{
+.img .sunup .sundown{
  height: 125px;
  width:125px;
 }

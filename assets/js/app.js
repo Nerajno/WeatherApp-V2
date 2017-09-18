@@ -1,5 +1,8 @@
 
 $(document).ready(function(){
+
+  $(".button-collapse").sideNav();
+  
   var location;
   var state;
   var lat;
@@ -26,8 +29,8 @@ $(document).ready(function(){
     // Rounding down the decimal place of the location
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
-    // Converts to string... the numbers recieved as coordinates 
-    
+    // Converts to string... the numbers recieved as coordinates
+
 
     //To use for the Sunrise and SunSet section
     var lat2 = crd.latitude;
@@ -38,7 +41,7 @@ $(document).ready(function(){
     var weather = function(long,lat){
       var apiKey ="eefb3de557ed0c0a";
       var api = "http://api.wunderground.com/api/"+apiKey +"/geolookup/q/" +long+ "," + lat +".json";
-      // console.log(api); //=> testing if the api wrks 
+      // console.log(api); //=> testing if the api wrks
 
       // JSON Call to get location
       $.getJSON(api,function(data){
@@ -62,7 +65,7 @@ $(document).ready(function(){
           $("#weather_icon").attr("src",weather_icon);
           // console.log(weather_icon); => testing
 
-       
+
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
           // console.log(windSpeed); => testing..... Robin WIlliams made and awesome genie.
@@ -77,10 +80,10 @@ $(document).ready(function(){
 
           var cTemp = data.current_observation.temp_c;
           $("#temp").html(cTemp +" &#x2103");
-        
-          // Clicking the button to do temperature switch between Celcius and Fahrenheit 
+
+          // Clicking the button to do temperature switch between Celcius and Fahrenheit
           var tempSwap=true;
-        
+
           var fTemp = data.current_observation.temp_f;
            $("#temp").click(function() {
              // console.log(tempSwap);
@@ -113,16 +116,16 @@ $(document).ready(function(){
            $("#Sunup").html(sunup);
 
           sundown = new Date(1000 *data.sys.sunset);
-          var hrs = sundown.getHours() - 12; 
+          var hrs = sundown.getHours() - 12;
           sundown = hrs+ ":"+sundown.getMinutes()+" pm";
           // console.log(sundown);
           $("#Sunset").html(sundown);
 
           });
 
-          }
-          other(sunup,sundown); 
-          //console.log(lat, long);    
+        };
+          other(sunup,sundown);
+          //console.log(lat, long);
 
           //DATE AND TIME//
           //Converted into days, months, hours, day-name, AM/PM
