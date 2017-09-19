@@ -9,6 +9,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Roboto:400,900i" rel="stylesheet">
+
   <!-- Css Stylesheets -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,7 +35,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">FCC REWRKD<i class="fa fa-free-code-camp" aria-hidden="true"></i>
-              <span class="caret"></span></a>
+                <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Random Quote Generator </a></li>
                 <li><a href="#">Weather App </a></li>
@@ -46,47 +47,45 @@
           </ul>
         </div>
       </nav>
-
-
-
+      <!-- Title, Time and Date -->
       <div class="info_header">
         <h2>Weather App V2.0</h2>
-          <div class="col-md-6 col-sm-6">
-          <h4 id="day">Day</h4>
-          </div>
-          <div class="col-md-6 col-sm-6">
-          <h4 id="date">Month, Day Year</h4>
-          </div>
+        <div class="col-md-6 col-sm-6">
+          <h4> It is <span id="day">Day</span></h4>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <h4> Today's date is  <span id="date">Month, Day Year</span></h4>
+        </div>
       </div>
 
       <br />
 
       <!-- Information Container 1 -->
       <div class="container-fluid center">
-
-        <!-- Time and Date -->
+        <!-- Weather Description-->
         <div class="col-sm-6 ">
           <div class="card">
             <div class="card-body">
-              <h4 id="time">Time</h4>
-
-              <button type="button" class="btn btn-primary btn-lg" id="temp">Temperature</button>
-            </div>
-          </div>
-        </div>
-        <!-- End of Time and Date -->
-
-        <!-- Weather Description-->
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h4 id="weatherInfo">Weather Description</h4>
+              <h4> Current Weather Condition</h4>
               <img id="weather_icon" src="">
+              <p id="weatherInfo">Weather Description</p>
             </div>
           </div>
         </div>
         <!-- End of Weather Description -->
 
+        <!-- Temperature-->
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4>Current Temperature</h4>
+              <p id="Temp">Temperature</p>
+              <!-- FIXME:  -->
+              <button type="button" class="btn btn-primary" id="cTemp"> Change to &#8451;/&#8457;</button>
+            </div>
+          </div>
+        </div>
+        <!-- End of Temperature -->
       </div>
       <!-- End of Information Container 1 -->
 
@@ -94,19 +93,6 @@
 
 
       <div class="row center">
-        <div class="col-sm-6 ">
-          <div class="card">
-            <div class="card-body">
-              <img id="sunup" src="https://farm5.staticflickr.com/4385/36108086803_8405da5f96_t.jpg" alt="001-dawn">
-              <h4 id="">Sunrise Time</h4>
-              <h4 id="Sunup">Sunrise</h4>
-              <br>
-              <img id="sundown" src="https://farm5.staticflickr.com/4408/36108086633_c3274a1a7d_t.jpg" width="64" height="64" alt="002-sunset">
-              <h4 id="">Sunset Time</h4>
-              <h4 id="Sunset">Sunset</h4>
-            </div>
-          </div>
-        </div>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
@@ -122,88 +108,59 @@
       <br>
 
       <div class="row center">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <div class="col-sm-6">
+            <div class="card horizontal">
+            <div class="card-image">
+              <img src="https://lorempixel.com/100/190/nature/6">
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Sunrise TIME</p>
+                <h4 id="sunup">Sunrise</h4>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+
+        <div class="col-sm-6">
+          <div class="card horizontal">
+            <div class="card-image">
+              <img src="https://lorempixel.com/100/190/nature/6">
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Sundown TIME</p>
+                <h4 id="sundown">Sunrise</h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="row center">
-        <div class=" col s12 m6">
-          <!--Card Narrower-->
-          <div class="card card-cascade narrower">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="img-fluid" alt="">
-              <a>
-                <div class="mask"></div>
-              </a>
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
             </div>
-            <!--/.Card image-->
-
-            <!--Card content-->
-            <div class="card-body">
-              <h5 class="pink-text"><i class="fa fa-cutlery"></i> Culinary</h5>
-              <!--Title-->
-              <h4 class="card-title">Cheat day inspirations</h4>
-              <!--Text-->
-              <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-              <a class="btn btn-unique">Button</a>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
             </div>
-            <!--/.Card content-->
-
           </div>
-          <!--/.Card Narrower-->
-
         </div>
-        <div class=" col s12 m6">
-          <!--Card Narrower-->
-          <div class="card card-cascade narrower">
-
-            <!--Card image-->
-            <div class="view overlay hm-white-slight">
-              <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="img-fluid" alt="">
-              <a>
-                <div class="mask"></div>
-              </a>
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
             </div>
-            <!--/.Card image-->
-
-            <!--Card content-->
-            <div class="card-body">
-              <h5 class="pink-text"><i class="fa fa-cutlery"></i> Culinary</h5>
-              <!--Title-->
-              <h4 class="card-title">Cheat day inspirations</h4>
-              <!--Text-->
-              <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-              <a class="btn btn-unique">Button</a>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
             </div>
-            <!--/.Card content-->
-
           </div>
-          <!--/.Card Narrower-->
-
         </div>
       </div>
 
