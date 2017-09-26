@@ -6,21 +6,16 @@ body{
   background-size: cover;
   position: relative;
   font-family: 'Baloo Bhaijaan', cursive;
+  color: #fff;
 }
 
 /*Navbar Start*/
 .navbar-inverse{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
   margin: auto;
-}
-
-.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
-  color:#3B81BF;
-  font-size: larger;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-  color: #3B81BF;
+  background-color:#0B132B;
 }
 
 .dropdown{
@@ -32,18 +27,12 @@ body{
   color: #3B81BF;
   text-transform:uppercase;
 }
-
-.Twtbtn{
+/* FIXME:  */
+.twtbtn{
   padding: 1.5px;
-  margin: 2.5px;
+  margin: 1.5px;
   border-radius: 7px;
-  background-color: black;
-  border-color: black;
-}
-
-.btn-navbar{
-  background-color: #f0641f;
-  color: black;
+  background-color:#3a506b;
 }
 /*Navbar End*/
 
@@ -57,10 +46,10 @@ body{
 }
 
 .center{
-  background-color: #313e45;
+  /*background-color: #313e45;
   opacity: 0.6;
   filter: alpha(opacity=60); /* For IE8 and earlier */
-  border-radius: 7px;
+  /*border-radius: 7px;*/
   margin: 0 auto;
   text-transform: uppercase;
   color: orange;
@@ -80,10 +69,14 @@ border-color: white;
 border-width: 3px;
 }
 
+.card{
+  background-color :#404c6e;
+}
 
 .card-body{
   font-family: 'Roboto', sans-serif;
-  color:#26A69A;
+  color:#fff;
+  background-color: #404c6e;
 }
 
 .img .sunup .sundown{
@@ -92,11 +85,11 @@ border-width: 3px;
 }
 
 .weatherInfo{
-  background-color: black;
+  /*background-color: black;
   width: 70%;
   margin: 0 auto;
   opacity: 0.6;
-  filter: alpha(opacity=60);
+  filter: alpha(opacity=60);*/
   text-transform: uppercase;
   margin: 0 auto;
   display: block;
