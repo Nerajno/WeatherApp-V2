@@ -7,6 +7,8 @@ $(document).ready(function(){
   var state;
   var lat;
   var long;
+  var sunup;
+  var sundown;
 
 
   // Documentation from Mdn geolocation for html5 and its accuracy
@@ -107,8 +109,7 @@ $(document).ready(function(){
           // console.log(api3); yes it wrks => testing
           $.getJSON(api3,function(data){
 
-          var sunup;
-          var sundown;
+
 
           sunup = new Date(1000 *data.sys.sunrise);
           sunup = sunup.getHours()+ ":" +sunup.getMinutes()+" am";
@@ -133,7 +134,7 @@ $(document).ready(function(){
           var dt = new Date();
           var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
           $('#day').html(days[dt.getDay()]);
-          var months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+          var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
           $('#date').html(months[dt.getMonth()] + " " + dt.getDate() + ", " + dt.getFullYear());
           $('#time').html((dt.getHours()>12?(dt.getHours()-12):dt.getHours()).toString() + ":" + ((dt.getMinutes() < 10 ? '0' : '').toString() + dt.getMinutes().toString()) + (dt.getHours() < 12 ? ' AM' : ' PM').toString());
 
@@ -141,11 +142,11 @@ $(document).ready(function(){
       });
     };
     weather(lat,long);
-    };
+    }
 
     function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
-  };
+  }
   navigator.geolocation.getCurrentPosition(success, error, options);
 });
 
