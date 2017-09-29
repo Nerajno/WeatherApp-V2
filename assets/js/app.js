@@ -43,7 +43,7 @@ $(document).ready(function(){
     var weather = function(long,lat){
       var apiKey ="eefb3de557ed0c0a";
       var api = "http://api.wunderground.com/api/"+apiKey +"/geolookup/q/" +long+ "," + lat +".json";
-      // console.log(api); //=> testing if the api wrks
+        console.log(api); //=> testing if the api wrks
 
       // JSON Call to get location
       $.getJSON(api,function(data){
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
         // Second API is used to get the weather description based on the location collected from the previous API
         var api2 = "http://api.wunderground.com/api/"+apiKey +"/conditions/q/"+state+"/"+location+".json";
-        console.log(api2);
+        // console.log(api2);
         $.getJSON(api2,function(data){
         // console.log(api2); //=> testing
 
@@ -70,33 +70,35 @@ $(document).ready(function(){
 
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
-          // console.log(windSpeed); => testing..... Robin WIlliams made and awesome genie.
+          // console.log(windSpeed); => testing..... Robin WIlliams made an awesome genie.
 
           var humidity = data.current_observation.relative_humidity;
-          $("#humidity").html(humidity+ " %");
-          // console.log(humidity); => testing..... imagine what Samuel L. Jackson would do as genie.
+          $("#humidity").html(humidity);
+          // console.log(humidity); => testing..... imagine what Samuel L. Jackson would do as genie in Alladin.
 
           var pressure = data.current_observation.pressure_mb;
-          $("#pressure").html(pressure+ " %");
+          $("#pressure").html(pressure+ " mb");
           // console.log(pressure); => testing
 
           var cTemp = data.current_observation.temp_c;
-          $("#temp").html(cTemp +" &#x2103");
+          console.log(cTemp);
+          $("#cTemp").html(cTemp +" &#x2103");
 
           // Clicking the button to do temperature switch between Celcius and Fahrenheit
           var tempSwap=true;
 
           var fTemp = data.current_observation.temp_f;
-           $("#temp").click(function() {
-             // console.log(tempSwap);
+          console.log(fTemp);
+           $("#cTemp").click(function() {
+             console.log(tempSwap);
             if(tempSwap===true){
-          //console.log(" mej");
-          $("#temp").html(cTemp + " &#x2103");
-          // console.log('tempSwap was true, switching it to false');
+          console.log(" mej");
+          $("#cTemp").html(cTemp + " &#x2103");
+         console.log('tempSwap was true, switching it to false');
           tempSwap=false;
         }
         else {
-          $("#temp").html(fTemp + " &#x2109");
+          $("#cTemp").html(fTemp + " &#x2109");
           console.log('tempSwap was false, switching it to true');
           tempSwap=true;
         }
@@ -106,7 +108,7 @@ $(document).ready(function(){
            var other = function(sunup, sundown){
           var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat2+"&lon="+long2;
           //"https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
-          // console.log(api3); yes it wrks => testing
+           console.log(api3); //yes it wrks => testing
           $.getJSON(api3,function(data){
 
 

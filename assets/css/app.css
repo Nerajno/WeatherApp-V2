@@ -5,7 +5,7 @@ body{
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-  font-family: 'Baloo Bhaijaan', cursive;
+  /*font-family: 'Baloo Bhaijaan', cursive;*/
   color: #fff;
 }
 
@@ -27,17 +27,17 @@ body{
   color: #3B81BF;
   text-transform:uppercase;
 }
-/* FIXME:  */
-.twtbtn{
+ /*FIXME:  */
+/*.twtbtn{
   padding: 1.5px;
   margin: 1.5px;
   border-radius: 7px;
   background-color:#3a506b;
-}
+}*/
 /*Navbar End*/
 
 .info_header{
-  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Lato', sans-serif;
   width: 74%;
   margin: auto;
   text-align: center;
@@ -62,12 +62,13 @@ body{
   position: relative;
 }
 
+
 /*Fix this for the other section -for the top sections  */
-.row, .btn-lg{
+/*.row, .btn-lg{
 border-style: solid;
 border-color: white;
 border-width: 3px;
-}
+}*/
 
 .card{
   background-color :#404c6e;
@@ -77,6 +78,7 @@ border-width: 3px;
   font-family: 'Roboto', sans-serif;
   color:#fff;
   background-color: #404c6e;
+  padding: 20px 0;
 }
 
 .img .sunup .sundown{
@@ -99,4 +101,15 @@ border-width: 3px;
 .weather_icon{
   height: 125px;
   width: 125px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer;
 }

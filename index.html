@@ -9,6 +9,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Roboto:400,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 
   <!-- Css Stylesheets -->
   <!-- Bootstrap -->
@@ -28,8 +29,9 @@
 <body>
   <container-fluid>
     <section>
-
-      <nav class="navbar navbar-inverse">
+       <!-- Navbar -->
+       <!-- FIXME:  -->
+      <!-- <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">NJ</a>
@@ -48,29 +50,27 @@
             <li class="twtbtn"><button ><a class="btn btn-sm btn-navbar" href="https://twitter.com/nerajno" role="button" target="_blank"><span class="fa fa-twitter"></span> Say Hi </a></button></li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
       <!-- Title, Time and Date -->
-      <div class="info_header">
+      <div class=" row info_header">
         <h2>Weather App V2.0 <i class="wi wi-day-sunny"></i></h2>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-12">
           <h4> It is <span id="day">Day</span></h4>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-12">
           <h4> Today's date is  <span id="date">Month, Day Year</span></h4>
         </div>
       </div>
-
       <br />
-
       <!-- Information Container 1 -->
       <div class="container-fluid center">
         <!-- Weather Description-->
         <div class="col-sm-6 ">
           <div class="card">
             <div class="card-body">
-              <h4> Current Weather Condition</h4>
+              <p> Current Weather Condition</p>
               <img id="weather_icon" src="">
-              <p id="weatherInfo">Weather Description</p>
+              <h4 id="weatherInfo">Weather Description</h4>
             </div>
           </div>
         </div>
@@ -80,10 +80,11 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h4>Current Temperature</h4>
-              <p id="Temp">Temperature</p>
+              <p>Current Temperature</p>
+              <button type="button" class="btn btn-primary"><p id="cTemp">Temperature</p></button>
               <!-- FIXME:  -->
-              <button type="button" class="btn btn-primary" id="cTemp"> Change to &#8451;/&#8457;</button>
+              <h4><i class="fa fa-thermometer-empty " aria-hidden="true"></i></h4>
+              <!-- <button type="button" class="btn btn-primary" id="Temp"> Click to Change </button> -->
             </div>
           </div>
         </div>
@@ -92,23 +93,6 @@
       <!-- End of Information Container 1 -->
 
       <br>
-
-
-      <div class="row center">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h4>Wind Speed</h4>
-              <h4 id="windSpeed">windSpeed</h4>
-              <h4 id="humidity">Humidity</h4>
-              <h4 id="pressure">Pressure</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
       <div class="row center">
         <div class="col-sm-6">
             <div class="card horizontal">
@@ -119,6 +103,7 @@
               <div class="card-content">
                 <p>Sunrise TIME</p>
                 <h4 id="Sunup">Sunrise</h4>
+                <h4 class="sunIcons"><i class="wi wi-sunrise"></i></h4>
               </div>
             </div>
           </div>
@@ -133,6 +118,7 @@
               <div class="card-content">
                 <p>Sundown TIME</p>
                 <h4 id="Sunset">Sunrise</h4>
+                <h4 class="sunIcons"><i class="wi wi-sunset"></i></h4>
               </div>
             </div>
           </div>
@@ -140,32 +126,41 @@
       </div>
 
       <div class="row center">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+        <div class="col-sm-4">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Wind Speed</p>
+                <p id="windSpeed">windSpeed</p>
+                <!-- <p id="windIcon"><i class="wi-day-windy"></i></p> -->
+              </div>
             </div>
           </div>
         </div>
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <div class="col-sm-4">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <i class="wi-humdity"></i>
+                <p>Humidity</p>
+                <p id="humidity">windSpeed</p>
+                <!-- <p id="windIcon"><i class="wi-day-windy"></i></p> -->
+              </div>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Pressure</p>
+                <p id="pressure"></p>
+                <!-- <p id="windIcon"><i class="wi-day-windy"></i></p> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-
 
     </section>
   </container-fluid>
