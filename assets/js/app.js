@@ -10,7 +10,6 @@ $(document).ready(function(){
   var sunup;
   var sundown;
 
-
   // Documentation from Mdn geolocation for html5 and its accuracy
   var options = {
     enableHighAccuracy: true,
@@ -32,7 +31,6 @@ $(document).ready(function(){
     lat = crd.latitude.toFixed(2);
     long= crd.longitude.toFixed(2);
     // Converts to string... the numbers recieved as coordinates
-
 
     //To use for the Sunrise and SunSet section
     var lat2 = crd.latitude;
@@ -67,7 +65,6 @@ $(document).ready(function(){
           $("#weather_icon").attr("src",weather_icon);
           // console.log(weather_icon); => testing
 
-
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
           // console.log(windSpeed); => testing..... Robin WIlliams made an awesome genie.
@@ -86,7 +83,6 @@ $(document).ready(function(){
 
           // Clicking the button to do temperature switch between Celcius and Fahrenheit
           var tempSwap=true;
-
           var fTemp = data.current_observation.temp_f;
           console.log(fTemp);
            $("#cTemp").click(function() {
@@ -104,14 +100,11 @@ $(document).ready(function(){
         }
       });
 
-
            var other = function(sunup, sundown){
           var api3 = "https://fcc-weather-api.glitch.me/api/current?lat="+lat2+"&lon="+long2;
           //"https://fcc-weather-api.glitch.me/api/current?lat=" +lat+'&lon=' +long;
            console.log(api3); //yes it wrks => testing
           $.getJSON(api3,function(data){
-
-
 
           sunup = new Date(1000 *data.sys.sunrise);
           sunup = sunup.getHours()+ ":" +sunup.getMinutes()+" am";
@@ -123,9 +116,7 @@ $(document).ready(function(){
           sundown = hrs+ ":"+sundown.getMinutes()+" pm";
           // console.log(sundown);
           $("#Sunset").html(sundown);
-
           });
-
         };
           other(sunup,sundown);
           //console.log(lat, long);
@@ -151,9 +142,3 @@ $(document).ready(function(){
   }
   navigator.geolocation.getCurrentPosition(success, error, options);
 });
-
-
-/*Testing Information
-googleapis
-var apiKey = "AIzaSyAkPcGdzzwW6UzzC2HmOJCf1_HSedXNCvo"
-var api = "http://ip-api.com/json/?callback=yourfunction"*/
