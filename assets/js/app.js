@@ -67,11 +67,11 @@ $(document).ready(function(){
 
           var windSpeed = data.current_observation.wind_mph;
           $("#windSpeed").html(windSpeed+" mph");
-          // console.log(windSpeed); => testing..... Robin WIlliams made an awesome genie.
+          // console.log(windSpeed); => testing..... Robin Williams made an awesome genie.
 
           var humidity = data.current_observation.relative_humidity;
           $("#humidity").html(humidity);
-          // console.log(humidity); => testing..... imagine what Samuel L. Jackson would do as genie in Alladin.
+          // console.log(humidity); => testing..... imagine what Samuel L. Jackson would do as genie in Aladin.
 
           var pressure = data.current_observation.pressure_mb;
           $("#pressure").html(pressure+ " mb");

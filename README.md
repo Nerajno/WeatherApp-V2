@@ -1,3 +1,3 @@
 # WeatherApp-V2.0
 
-will edit 
+Fix media queries for this, make notes on other fixes needed. 
